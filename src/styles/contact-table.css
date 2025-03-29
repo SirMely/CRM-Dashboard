@@ -1,0 +1,132 @@
+.contacts-wrapper {
+  margin-top: 2rem;
+}
+
+.contacts-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contacts-table th, .contacts-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+}
+
+.contacts-table th:nth-child(3),
+.contacts-table td:nth-child(3) {
+  width: 250px;
+}
+
+.contacts-table th:nth-child(4),
+.contacts-table td:nth-child(4) {
+  width: 150px;
+  text-align: center;
+}
+
+.contacts-table th {
+  background-color: #f9f9f9;
+  font-weight: bold;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: center;
+  min-width: 100px;
+  max-width: 100px;
+  margin-top: 20px;
+}
+
+.status.active {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.status.inactive {
+  background-color: #fef2f2;
+  color: #991b1b;
+}
+
+.status.pending {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.icon {
+  font-size: 1.4rem;
+}
+
+/* Search Inputs */
+
+.search-input {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.5rem 0.75rem;
+  margin: 1rem 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.status-filters {
+  margin: 1rem 0;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.status-filters button {
+  padding: 0.4rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.status-filters button:hover {
+  background-color: #e2e8f0;
+}
+
+.status-filters .active-filter {
+  background-color: #1f2937;
+  color: #fff;
+  border-color: #1f2937;
+}
+
+/* Delete button */
+.delete-btn {
+  padding: 0.3rem 0.6rem;
+  border: none;
+  background-color: #e53e3e;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: 0.2s ease;
+}
+
+.delete-btn:hover {
+  background-color: #c53030;
+}
+
+/* Mobile stuff */
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.contacts-table {
+  width: 100%;
+  min-width: 600px;
+}

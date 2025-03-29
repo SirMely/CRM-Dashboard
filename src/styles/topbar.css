@@ -1,0 +1,29 @@
+.topbar {
+    background-color: #fff;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.avatar {
+    background-color: #eee;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+}
