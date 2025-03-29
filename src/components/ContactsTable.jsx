@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import '../styles/contact-table.css'
 
 function ContactsTable({ contacts, onDelete }) {
@@ -15,7 +15,6 @@ function ContactsTable({ contacts, onDelete }) {
     <div className="contacts-wrapper">
       <h2>Contacts</h2>
 
-      {/* Search Bar */}
       <input
         type="text"
         placeholder="Search by name..."
@@ -24,7 +23,6 @@ function ContactsTable({ contacts, onDelete }) {
         className="search-input"
       />
 
-      {/* Status Filters */}
       <div className="status-filters">
         {['All', 'Active', 'Inactive', 'Pending'].map((status) => (
           <button
@@ -44,7 +42,7 @@ function ContactsTable({ contacts, onDelete }) {
               <th>Name</th>
               <th>Email</th>
               <th>Status</th>
-              <th className='icon' title="Delete">⚙️</th>
+              <th className="action-header" title="Actions">⚙️</th>
             </tr>
           </thead>
           <tbody>
@@ -52,13 +50,9 @@ function ContactsTable({ contacts, onDelete }) {
               <tr key={contact.id}>
                 <td>{contact.name}</td>
                 <td>{contact.email}</td>
-                <td className={`status ${contact.status.toLowerCase()}`}>
-                  {contact.status}
-                </td>
+                <td className={`status ${contact.status.toLowerCase()}`}>{contact.status}</td>
                 <td>
-                  <button className="delete-btn" onClick={() => onDelete(contact.id)}>
-                    Delete
-                  </button>
+                  <button className="delete-btn" onClick={() => onDelete(contact.id)}>Delete</button>
                 </td>
               </tr>
             ))}

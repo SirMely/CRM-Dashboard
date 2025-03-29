@@ -1,14 +1,16 @@
 import {useState, useEffect} from 'react'
-import Sidebar from './components/Sidebar.jsx'
-import Topbar from './components/Topbar.jsx'
-import DashboardCards from './components/DashboardCards.jsx'
-import contacts from './data/contacts.js'
-import ContactsTable from './components/ContactsTable.jsx'
-import AddContactForm from './components/AddContactForm.jsx'
+import Sidebar from './components/Sidebar'
+import Topbar from './components/Topbar'
+import DashboardCards from './components/DashboardCards'
+import ContactsTable from './components/ContactsTable'
+import AddContactForm from './components/AddContactForm'
+import initialContacts from './data/contacts'
 import './styles/main.css'
 
 function App() {
+  const [contacts, setContacts] = useState(initialContacts);
   const [stats, setStats] = useState([]);
+  const [showSidebar, setShowSidebar] = useState(false);
 
   useEffect(() => {
     const total = contacts.length;
@@ -16,37 +18,37 @@ function App() {
     const inactive = contacts.filter(c => c.status === 'Inactive').length;
 
     setStats([
-      { label: 'Total Contacts', value: total},
-      { label: 'Active Contacts', value: active},
-      { label: 'Inactive Contacts', value: inactive},
+      { label: 'Total Contacts', value: total },
+      { label: 'Active Contacts', value: active },
+      { label: 'Inactive Contacts', value: inactive },
     ]);
   }, [contacts]);
 
   const handleAddContact = (newContact) => {
-    setContacts([newContact, ...contacts]);
-  }
+    setContacts(prev => [newContact, ...prev]);
+  };
 
   const handleDeleteContact = (id) => {
-    const confirmed = window.confirm("Are you sure you want to delete this contact?");
+    const confirmed = window.confirm("Delete this contact?");
     if (confirmed) {
-      setContacts(contacts.filter(contact => contact.id !== id));
+      setContacts(prev => prev.filter(contact => contact.id !== id));
     }
   };
 
   return (
-     <div className='main-layout'>
-      <Sidebar></Sidebar>
-      <div className='main-content'>
-        <Topbar></Topbar>
-        <main style={{ padding: '1rem'}}>
+    <div className="main-layout">
+      <Sidebar show={showSidebar} />
+      <div className="main-content">
+        <Topbar onToggleSidebar={() => setShowSidebar(prev => !prev)} />
+        <main>
           <h2>Welcome to your CRM Dashboard</h2>
-          <DashboardCards stats={stats}></DashboardCards>
-          <AddContactForm onAdd={handleAddContact}></AddContactForm>
-          <ContactsTable contacts={contacts} onDelete={handleDeleteContact}></ContactsTable>
+          <DashboardCards stats={stats} />
+          <AddContactForm onAdd={handleAddContact} />
+          <ContactsTable contacts={contacts} onDelete={handleDeleteContact} />
         </main>
       </div>
-     </div>
+    </div>
   );
 }
 
-export default App
+export default App;

@@ -1,14 +1,27 @@
-# React + Vite
+# React CRM Dashboard
 
-This is still currently in Development. So currently not available to view live unless ofc you take my code lol!
+A beginner CRM Dashboard built with React!
+I will continue to work on this to better it and also work on different forms of Dashboards!
 
-Rest of this stuff is just stuff I'll edit out later -->
+## 🚀 Features
 
-Currently, two official plugins are available:
+- Dashboard cards with contact summaries
+- Search and filter contacts by name or status
+- Add and delete contacts dynamically
+- Responsive sidebar with hamburger menu on mobile
+- Clean UI styled with custom CSS (no UI frameworks)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- React (Vite)
+- HTML + CSS
+- JavaScript
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📱 Responsive
+
+Fully responsive layout:
+- Mobile-first design
+- Sidebar slides out on small screens
+
+
+
